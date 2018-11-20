@@ -15,8 +15,8 @@ public class CodeWordChecker implements StringChecker {
         this.str = str;
     }
 
-    public boolean isValid(String string){
-        if (str.indexOf("$") >0){
+    public boolean isValid(String str){
+        if (str.indexOf("$") >=0){
             return false;
         }
         if (str.length()<5 || str.length() >8){
@@ -26,5 +26,15 @@ public class CodeWordChecker implements StringChecker {
             return true;
         }
     }
-
+    public boolean isValid(String str){
+        if (str.length()<6 || str.length()>20){
+            return false;
+        }
+        if (str.contains("Pass")){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 }
